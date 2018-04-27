@@ -1,18 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
+//componentes
+import { CancionesComponent } from './canciones/canciones.component';
+
+//services
+import { CancionesService } from './providers/canciones.service';
+
+
+//pipes
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CancionesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [       
+    CancionesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

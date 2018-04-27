@@ -1,0 +1,14 @@
+<h1>Canciones</h1>
+
+<div class="jumbotron">
+  <p *ngIf="canciones.length==0">Todavia no existen canciones</p>
+  
+  <ul class="list-group"*ngFor="let cancion of canciones">
+    <li class="list-group-item">
+      <span>{{cancion.id}}</span>
+      <span>{{cancion.nombre}}</span>
+      <span (click)="eliminar(cancion.id)">Eliminar</span>
+    </li>
+    
+  </ul>
+ 
