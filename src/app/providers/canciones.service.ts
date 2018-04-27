@@ -29,5 +29,9 @@ export class CancionesService {
     console.log(`CancionesService getAll ${url}`);    
     return this.http.get(url);
   } 
+  eliminar(id){
+    let url = `http://localhost:8080/cancion/`+id;
+    return this.http.delete(url);
 
+  }
 }

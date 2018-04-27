@@ -10,6 +10,9 @@ import { Cancion } from '../model/cancion';
 })
 export class CancionesComponent implements OnInit {
 
+  getAll(): any {
+    throw new Error("Method not implemented.");
+  }
   //canciones
   canciones : Cancion[]; 
   cancionSeleccionada : Cancion;
@@ -42,9 +45,44 @@ export class CancionesComponent implements OnInit {
 
 
   }
+  //ngOnInit
+  /*
+  cargarTareas(){
+    console.log('TodosComponent cargarTareas');
+    this.canciones = [];
+    this.cancionesService.getAll().subscribe(
+      resultado => {
+        console.debug('peticion correcta %o', resultado);
+        this.mapeo(resultado);
+      },
+      error=>{
+        console.warn('peticion incorrecta %o', error);
+      }
+    );//subscribe
+  }
+  */
 
-  eliminar( id: number ){
-    console.log(`CancionesComponent eliminar ${id}`);
+
+  eliminar(cancion:Cancion){
+    console.log('TodosComponent delete %o', cancion );
+
+    this.cancionesService.eliminar(cancion.id).subscribe(
+      result=>{
+        this.getAll();
+      },
+      error=>{
+        alert('No de pudo eliminar Tarea');
+      }
+    
+    );
+    /*
+    this.todos.forEach( (t, index) =>{
+      if ( t.id === todo.id ){
+        this.todos.splice(index,1);
+        return false; //break        
+      }
+    });*/
+
   }
 
   mockData(){
