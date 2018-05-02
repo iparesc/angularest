@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient, HttpHandler } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-
+import {FormsModule} from '@angular/forms';
 //componentes
 import { CancionesComponent } from './canciones/canciones.component';
 
@@ -19,6 +19,7 @@ import { CancionesService } from './providers/canciones.service';
     CancionesComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule
   ],
